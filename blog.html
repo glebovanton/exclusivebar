@@ -43,7 +43,8 @@
             src="https://code.jquery.com/jquery-2.2.4.min.js"
             integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
             crossorigin="anonymous"></script>-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script><!--
+
+    <!--
         <script src="js/bootstrap.js"></script>-->
 
 
@@ -103,15 +104,13 @@
 <section>
 
     <div id="portfolio" class="portfolio">
-        <div class="container">
+        <div id="blog-gallery" class="container">
             <div class="push50">
                 <div class="text-center">
-                    <h2>Блог</h2>
+                    <h2>{{pageTitle}}</h2>
                     <h3>
-                        <span class="filter label label-default active" data-filter="все">Все</span>
-                        <span class="filter label label-default" data-filter="новости">Новости</span>
-                        <span class="filter label label-default" data-filter="анонсы">Анонсы</span>
-                        <span class="filter label label-default" data-filter="коктейли">Коктейли</span>
+                        <span class="filter label label-default" v-for="(filter, index) in filters"
+                              :data-filter="filter" :class="{ 'active': index === 0 }">{{filter}}</span>
                     </h3>
                     <hr>
                 </div>
@@ -122,44 +121,25 @@
 
             <div class="row">
                 <div class="gallery">
-                    <ul id="Grid" class="gcontainer">
-                        <!--1-->
-                        <li class="gal-elem col-xs-12 col-sm-6 col-md-6 mix новости все" data-cat="анонсы">
-                            <a data-toggle="modal" data-target="#news1" class="mix-cover">
-                                <img class="horizontal" src="images/blog/blog1.jpg" alt="Бармен">
-                                <span class="overlay"><h4 class="date">25<br>Фев</h4>
+                    <ul id="Grid" class="container">
+
+                        <li v-for="(post, index) in posts" class="gal-elem col-xs-12 col-sm-6 col-md-6 mix все"
+                            :class="post.topic">
+                            <a data-toggle="modal" :data-target="'#'+post.target" class="mix-cover">
+                                <img class="horizontal" v-if="post.images[0]" :src="post.images[0]" :alt="post.topic">
+                                <span class="overlay"><h4 class="date">{{post.date}}</h4>
                                 <h4 class="title">
-                                    Как организовать свадьбу своей Мечты? Как выбрать шоу программу, на что следует выделять бюджет?
-                                </h4></span>
-                            </a>
-                        </li>
-                        <!--2-->
-                        <li class="gal-elem col-xs-12 col-sm-6 col-md-6 mix коктейли все" data-cat="новости">
-                            <a data-toggle="modal" data-target="#news2" class="mix-cover">
-                                <img class="horizontal" src="images/blog/blog2.jpg" alt="Новости">
-                                <span class="overlay"><h4 class="date">8<br>Мар</h4>
-                                <h4 class="title">
-                                    Cocktails to Celebrate International Women’s Day!
-                                </h4></span>
-                            </a>
-                        </li>
-                        <!--3-->
-                        <li class="gal-elem col-xs-12 col-sm-6 col-md-6 mix анонсы все" data-cat="коктейли">
-                            <a data-toggle="modal" data-target="#news3" class="mix-cover green">
-                                <img class="vertical" src="images/blog/blog3.jpg" alt="Блог">
-                                <span class="overlay"><h4 class="date">22<br>Мар</h4>
-                                <h4 class="title">
-                                   Набор группы обучения на курс барменов Bartender School  начался!
+                                    {{post.title}}
                                 </h4></span>
                             </a>
                         </li>
 
                     </ul>
-
                     <!--                    !!!!!!-->
                     <!--                    Blog expand-->
                     <!--1-->
-                    <div class="modal fade" id="news1" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div v-for="(post, index) in posts" class="modal fade" :id="post.target" tabindex="-1" role="dialog"
+                         aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -167,26 +147,21 @@
                                             aria-hidden="true">&times;
                                     </button>
                                     <h4 class="modal-title text-center">
-                                        Как организовать свадьбу своей Мечты? Как
-                                        выбрать шоу программу, на что следует выделять бюджет?
+                                        {{post.title}}
                                     </h4>
                                 </div>
                                 <div class="modal-body clearfix">
-                                    <img class="thumbnail" alt="Спектакли" src="images/blog/blog1.jpg"/>
-                                    <img class="thumbnail" alt="Спектакли" src="images/blog/blog1-2.jpg"/>
-                                    <p>25 Февраля состоялся ежегодный проект “One Wedding Day 2018”. Свадебный
-                                        организатор Любовь Шибаршина представила его в новом формате в ресторане «Парк
-                                        Холл» На проекте для будущих молодожёнов были представлены свадебные платья и
-                                        костюмы, декор, флористика, шоу программы, угощения от ресторана. Ведущие вечера
-                                        Виталий Воднев и Артём Астровлян.
-                                        Exclusive Bar Catering удивлял гостей зрелищным Бармен шоу и угощал коктейлями!
-                                        Мероприятие прошло на высоком уровне!</p>
+                                    <img v-if="post.images" class="thumbnail" :alt="post.topic"
+                                         v-for="image in post.images" :src="image"/>
+                                    <!--<img v-if="post.images[0]" class="thumbnail" :alt="post.topic"
+                                         :src="post.images[0]"/>-->
+                                    <p v-html="post.description"></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!--2-->
-                    <div class="modal fade" id="news2" tabindex="-1" role="dialog" aria-hidden="true">
+                    <!--<div class="modal fade" id="news2" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -208,7 +183,7 @@
                             </div>
                         </div>
                     </div>
-                    <!--3-->
+                    &lt;!&ndash;3&ndash;&gt;
                     <div class="modal fade" id="news3" tabindex="-1" role="dialog" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -236,7 +211,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
+
 
                 </div>
             </div>
@@ -275,14 +251,103 @@
 
 </footer>
 <!-- /END FOOTER -->
+
 <a id="upScroll" title="Наверх"></a>
 
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="js/jquery.mixitup.min.js"></script>
+<script>
+    const app = new Vue({
+        el: '#blog-gallery',
+        data: {
+            pageTitle: 'Блог',
+            filters: ['все', 'новости', "анонсы", 'коктейли'],
+            posts: [
+                //!!topic ДОЛЖНЫ БЫТЬ (MUST BE): 'новости','коктейли','анонсы'
+                {
+                    topic: 'новости',
+                    target: 'news1',
+                    images: ['images/blog/blog1.jpg', 'images/blog/blog1-2.jpg'],
+                    date: '25 Фев',
+                    title: 'Как организовать свадьбу своей Мечты? Как выбрать шоу программу, на что следует выделять бюджет?',
+                    description: '25 Февраля состоялся ежегодный проект “One Wedding Day 2018”. Свадебный организатор Любовь Шибаршина представила его в новом формате в ресторане «Парк Холл» На проекте для будущих молодожёнов были представлены свадебные платья и костюмы, декор, флористика, шоу программы, угощения от ресторана. Ведущие вечера Виталий Воднев и Артём Астровлян. Exclusive Bar Catering удивлял гостей зрелищным Бармен шоу и угощал коктейлями! Мероприятие прошло на высоком уровне!'
+                },
+                {
+                    topic: 'коктейли',
+                    target: 'news2',
+                    images: ['images/blog/blog2.jpg'],
+                    date: '8 Мар',
+                    title: 'Cocktails to Celebrate International Women’s Day!',
+                    description: 'Международный женский день, поэтому, естественно, нам нужно немного\n' +
+                        '                                        коктейлей, чтобы отпраздновать. У нас есть отличный напиткок, который сочетает\n' +
+                        '                                        в себе наши любимые женские качества: нежность, прикосновение сладости\n' +
+                        '                                        и умеренный уровень резкости, чтобы держать всех на цыпочках ...'
+                },
+                {
+                    topic: 'анонсы',
+                    target: 'news3',
+                    images: ['images/blog/blog3.jpg'],
+                    date: '22 Мар',
+                    title: 'Набор группы обучения на курс барменов Bartender School  начался!',
+                    description: 'Набор группы начался!\n' +
+                        '                                        Изучаемые направления: Working flair, Craft flair, Bar skills!\n' +
+                        '                                        У нас самая передовая и уникальная программа. Во время курса вы узнаете, как\n' +
+                        '                                        ослепить своих гостей магическими трюками, сохраняя при этом качество и скорость\n' +
+                        '                                        процесса приготовления коктейлей. Это означает, что вы получаете реальный опыт и\n' +
+                        '                                        образование, вплоть до мельчайших деталей.\n' +
+                        '                                        Курс научит вас, как одновременно создавать напитки, демонстрируя множество\n' +
+                        '                                        фантастических трюков.\n' +
+                        '                                        По всем вопросам по телефону\n' +
+                        '                                        <a href="tel:+375" class="social-icons-a"><i class="fa fa-phone"\n' +
+                        '                                                                                     aria-hidden="true"></i>+375293846785</a>'
+                },
+                {
+                    topic: 'новости',
+                    target: 'news4',
+                    images: ['images/blog/blog4.jpg', 'images/blog/blog4-1.jpg'],
+                    date: '30 Авг',
+                    title: 'Бармен шоу и приготовление коктейлей на презентации MixBerry wines.by',
+                    description: '<a href="https://exclusivebar.by">Exclusivebar</a> провёл презентацию MixBerry <a href="https://wines.by">wines.by</a>! ' +
+                        'Этим летом «ШампаньПаб» запустил романтический проект «Твоё необычное свидание». Каждый последний четверг месяца парочки разной степени влюбленности собираются на тематическую вечеринку, наполненную ритмами танго и вкусами потрясающих блюд.' +
+                        '«Свидание» 30 августа стало особенно насыщенным и зажигательным. Во многом благодаря Минскому заводу игристых вин, который принял самое активное участие  в организации.' +
+                        'Прежде всего, задал тон гастрономической части вечера: коктейли на основе элегантного игристого вина MayBlanc и линейки задорных MixBerry стали отличной  парой изысканным блюдам от шеф-повара «ШампаньПаб».' +
+                        'Да, вы сейчас не ослышались: коктейли на основе игристого вина. Это невероятно вкусно и интересно. Особенно, если с шейкером управляется профессиональный бармен, который из  привычной схемы «налить, добавить, взболтать, но не смешивать» делает эффектное шоу' +
+                        'Гости, явно, вдохновились и  сами решили заняться творчеством — рисованием в частности. Потягивая прохладные напитки, пары в четыре руки ваяли портрет любви. На скорость и не забывая выполнять задания ведущего.' +
+                        'Отдельной изюминкой вечеринки стал интеллектуальный конкурс. Участникам нужно было и логику проявить,  ответив, чем MixBerry от шампанского отличается, и внимательность - вспомнив, сколько в линейке винных коктейлей ' +
+                        'разных вкусов и какой из них самый популярный, и креативное мышление - предложив и предположив  звучание нового вкуса в семействе MixBerry. За правильные ответы полагались приятные и полезные подарки от МЗИВ: портативная музыкальная колонка, наушники,  фирменный алкоголь, карточки под номер телефона для автомобиля.' +
+                        ' Одним из самых колоритных призов стала книга «Искры в бокале».В ней собраны не только познавательные факты о благородных напитках, но и самые важные вехи истории Минского завода игристых вин. Который, между прочим, в этом году празднует 40-летие успешной деятельности.' +
+                        'Парочки тем временем дорисовали портреты,  отложили кисти и переместились на мастер-класс по танго. Некоторые  прихватили с собой коктейли в качестве шпаргалки - вопросов (и призов, соответственно) было ещё много. '
+                },
+                {
+                    topic: 'новости',
+                    target: 'news5',
+                    images: ['images/blog/blog5.jpg'],
+                    date: '12 Авг',
+                    title: '10 лет World of Tanks.',
+                    description: '<a href="https://worldoftanks.ru/">Worldoftanks</a> отметил своё десятилетие! Мы радовались этому событию вместе с ними. <a href="https://exclusivebar.by">Exclusivebar</a> помог организовать юбилей компании. Спасибо за подарки, в виде скидок на технику, мы пошли играть...:) '
+                }
+            ]
+        }
+    });
+    Vue.component('blog-gallery', {
+        props: ['blog'],
+        template: '<li>{{ todo.text }}</li>'
+    });
+
+</script>
+
+
 <script>
     $(function () {
         $('#Grid').mixitup();
     });
 </script>
+
+<script src="js/vue/blog-galery-component.js"></script>
+<!-- production version, optimized for size and speed -->
+<!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+
 
 </body>
 </html>

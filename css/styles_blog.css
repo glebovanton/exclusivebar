@@ -37,8 +37,12 @@ body {
     text-align: center;
 }
 
-.filter {
+span.filter {
     cursor: pointer;
+    display: inline-block;
+    cursor: pointer;
+    text-transform: capitalize;
+    margin: 2px;
 }
 
 #Grid .gal-elem {
@@ -56,9 +60,11 @@ body {
 a:hover, a:active, a:visited, a:focus {
     text-decoration: none;
 }
+
 .social-icons-a {
     color: #636363;
 }
+
 .social-icons-a:hover {
     color: #434343;
 }
@@ -470,6 +476,7 @@ header .intro-section .buttons {
     font-weight: 500;
     z-index: 1;
     color: white;
+    width: 80px;
 }
 
 .gallery .mix {
