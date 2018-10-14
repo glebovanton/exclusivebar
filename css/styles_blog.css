@@ -476,7 +476,7 @@ header .intro-section .buttons {
     font-weight: 500;
     z-index: 1;
     color: white;
-    width: 80px;
+    width: 77px;
 }
 
 .gallery .mix {
@@ -569,7 +569,7 @@ img.placeholder {
 
 .overlay .title {
     left: 0;
-    padding-top: 20vw;
+    padding: 20vw 0.1vw 0;
     text-align: center;
     font-weight: 500;
     z-index: 1;
@@ -578,7 +578,7 @@ img.placeholder {
 
 @media screen and (min-width: 768px ) {
     .overlay .title {
-        padding-top: 9vw;
+        padding: 9vw 0.1vw 0;
     }
 }
 
@@ -612,11 +612,15 @@ span.valign {
 }
 
 
-
 .modal-header {
     font-size: 20px;
     font-weight: 600;
 }
+
+.modal-header .close {
+    font-size: 33px;
+}
+
 
 .modal-content {
     position: relative;
@@ -627,12 +631,14 @@ span.valign {
     min-height: 70vh;
     padding: 20px;
 }
+
 @media only screen and (min-width: 420px) and (max-width: 767px) {
     .modal-body p {
         font-size: 3vw;
         line-height: 4.5vw;
     }
 }
+
 @media only screen and (max-width: 419px) {
     .modal-body p {
         font-size: 4vw;
@@ -647,13 +653,14 @@ span.valign {
     /*margin: 0 15px 21px;*/
 
 }
-.modal-body img:nth-child(odd){
+
+.modal-body img:nth-child(odd) {
     margin: 3px 15px 10px 0;
     float: left;
 }
 
 .modal-body img:nth-child(even) {
-    margin: 3px 0 10px 15px ;
+    margin: 3px 0 10px 15px;
     float: right;
 }
 
