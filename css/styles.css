@@ -200,8 +200,16 @@ h5 {
 #intro-section-text {
     border-radius: 3px;
     background-color: rgba(0, 0, 0, 0.49);
+    padding-bottom: 15px;
     -webkit-transition: background-color 2s ease-out;
     -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease-out;
+}
+.sticky-navigation{
+    -webkit-transition: background-color 2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -ms-transition: background-color 2s ease-out;
     -o-transition: background-color 2s ease-out;
     transition: background-color 2s ease-out;
 }
@@ -302,7 +310,7 @@ h5 {
 .white-line {
     margin: auto;
     z-index: 1;
-    width: 165px;
+    width: 100%;
     height: 1px;
     background: #ffffff;
 }
@@ -346,7 +354,7 @@ header {
 }
 
 header .color-overlay {
-    min-height: 900px;
+    min-height: 100vh;
 }
 
 header .full-screen {

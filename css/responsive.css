@@ -6,12 +6,12 @@ header .color-overlay{min-height:800px;}
 .colored-line-left{float:none;margin:auto;}
 }
 @media (min-width:768px) and (max-width:991px){html{font-size:90%;}
-header .color-overlay{min-height:780px;}
+/*header .color-overlay{min-height:780px;}*/
 .sticky-navigation .navbar-header{width:100%;position:relative;text-align:center;margin-top:10px;}
 .sticky-navigation .navbar-header a{float:none !important;}
 .sticky-navigation .navbar-header img{max-height:40px;}
 .sticky-navigation .main-navigation{text-align:center;width:100%;padding-top:0;}
-header .intro-section{padding-top:10%;}
+header .intro-section{padding-top:22vh;}
 .features .features-left,
 .features .features-right{margin-top:0;}
 .features .features-left .icon-container,
@@ -19,11 +19,11 @@ header .intro-section{padding-top:10%;}
 }
 @media (max-width:767px){html{font-size:80%;}
 body{font-size:15px;line-height:26px;}
-header .color-overlay{min-height:580px;}
+/*header .color-overlay{min-height:580px;}*/
 header .only-logo .navbar{padding:20px;}
 .navbar-inverse .navbar-nav{padding-left:10px;line-height:normal;text-align:center;}
 .navbar-inverse .navbar-nav>li{display:inline-block;margin-bottom:0;}
-header .intro-section{padding-top:9%;}
+header .intro-section{padding-top:22%;}
 .features .features-left,
 .features .features-right{text-align:center;margin-top:5px;}
 .features .feature{margin-bottom:70px;}

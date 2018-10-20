@@ -39,13 +39,20 @@ if (matchMedia('(max-width: 480px)').matches) {
         $(".navbar-toggle").click();
     });
 }
+
+function mainNav() {
+    var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+    if (top > 40) $('.sticky-navigation').css({'background-color': 'rgba(0, 0, 0, 0.8)'}); else $('.sticky-navigation').css({'background-color': 'rgba(0, 0, 0, 0)'});
+}
+
 $(document).ready(function () {
     mainNav();
 });
 $(window).scroll(function () {
     mainNav();
 });
-if (matchMedia('(min-width: 992px), (max-width: 767px)').matches) {
+
+/*if (matchMedia('(min-width: 992px), (max-width: 767px)').matches) {
     function mainNav() {
         var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
         if (top > 40) $('.sticky-navigation').stop().animate({"top": '0'}); else $('.sticky-navigation').stop().animate({"top": '-95'});
@@ -56,7 +63,8 @@ if (matchMedia('(min-width: 768px) and (max-width: 991px)').matches) {
         var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
         if (top > 40) $('.sticky-navigation').stop().animate({"top": '0'}); else $('.sticky-navigation').stop().animate({"top": '-120'});
     }
-}
+}*/
+
 
 function alturaMaxima() {
     var altura = $(window).height();
@@ -188,14 +196,14 @@ $(document).ready(function () {
 
         };
         node.className = 'shot ';
-/*        node.innerHTML = '<img src=' + item.image + ' alt="коктейль">\n' + '                        <!-- INFORMATION -->\n' + '                    <div class="screenshots-descr">\n' + '                        <div class="name">\n' + count + '. ' + item.title + ' </div>\n' + '                        <div class="white-line">\n' + '                        </div>\n' + '                        <div class="message">\n' + item.description + '                        </div>\n' + '                    </div>\n';*/
-        node.innerHTML = '<a href='+item.image+' data-lightbox-gallery="screenshots-gallery">\n' +
-            '<img src='+item.image+' alt=' + getAlt(count) + '>\n' +
+        /*        node.innerHTML = '<img src=' + item.image + ' alt="коктейль">\n' + '                        <!-- INFORMATION -->\n' + '                    <div class="screenshots-descr">\n' + '                        <div class="name">\n' + count + '. ' + item.title + ' </div>\n' + '                        <div class="white-line">\n' + '                        </div>\n' + '                        <div class="message">\n' + item.description + '                        </div>\n' + '                    </div>\n';*/
+        node.innerHTML = '<a href=' + item.image + ' data-lightbox-gallery="screenshots-gallery">\n' +
+            '<img src=' + item.image + ' alt=' + getAlt(count) + '>\n' +
             '<div class="screenshots-descr">\n' +
-            '<div class="name">'+ count + '. ' + item.title + '</div>\n' +
+            '<div class="name">' + count + '. ' + item.title + '</div>\n' +
             '<div class="white-line">\n' +
             '</div><!-- INFORMATION -->\n' +
-            '<div class="message">'+item.description+'</div>' +
+            '<div class="message">' + item.description + '</div>' +
             '</div>\n' +
             '</a>';
         parrent.appendChild(node);
