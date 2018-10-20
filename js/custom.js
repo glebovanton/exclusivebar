@@ -42,7 +42,7 @@ if (matchMedia('(max-width: 480px)').matches) {
 
 function mainNav() {
     var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-    if (top > 40) $('.sticky-navigation').css({'background-color': 'rgba(0, 0, 0, 0.8)'}); else $('.sticky-navigation').css({'background-color': 'rgba(0, 0, 0, 0)'});
+    if (top > 40) $('.sticky-navigation').css({'background-color': 'rgba(0, 0, 0, 0.85)'}); else $('.sticky-navigation').css({'background-color': 'rgba(0, 0, 0, 0.19)'});
 }
 
 $(document).ready(function () {
