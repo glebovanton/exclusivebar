@@ -444,7 +444,7 @@ header .intro-section h5 {
 }
 
 header .intro-section .buttons {
-    margin-top: 35px;
+    margin: 35px 0;
 }
 
 .features {
