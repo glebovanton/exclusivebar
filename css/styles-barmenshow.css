@@ -319,7 +319,7 @@ h5 {
     margin: 0 auto;
     width: 30px;
     height: 30px;
-    background-image: url(../images/arrow.svg);
+    background-image: url(../images/arrowGold.svg);
     background-position: 50% 50%;
     background-repeat: no-repeat;
     text-decoration: none;
@@ -867,6 +867,24 @@ object {
     box-shadow: none;
     display: block;
 }
+.screenshots .swiper-slide{
+    background: no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    align-self: stretch;
+}
+.screenshots .swiper-barshow{
+    width: 100%;
+
+}
+.screenshots .swiper-slide{
+    min-height: 33vw;
+}
+.screenshots .swiper-pagination-bullet-active{
+    background-color: #ae5e00;
+}
 
 .screenshots .shot img {
     border-radius: 4px;
@@ -894,6 +912,7 @@ object {
     text-shadow: 0px 0px 3px black;
     color: #c8c8c8;
 }
+
 
 .packages {
     padding-top: 80px;

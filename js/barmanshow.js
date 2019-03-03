@@ -1,3 +1,110 @@
+window.onload = function () {
+    setTimeout(function () {
+        $("#page-preloader").fadeOut();
+    }, 1000)
+};
+$(".video-container").fitVids();
+$('.mailchimp').ajaxChimp({
+    callback: mailchimpCallback,
+    url: "http://workglebov@gmail.com/subscribe/post?u=9445a2e155b82208d73433060&amp;id=16dc80e353"
+});
+
+function mailchimpCallback(resp) {
+    if (resp.result === 'success') {
+        $('.subscription-success').html('<i class="icon_check_alt2"></i><br/>' + resp.msg).fadeIn(1000);
+        $('.subscription-error').fadeOut(500);
+    } else if (resp.result === 'error') {
+        $('.subscription-error').html('<i class="icon_close_alt2"></i><br/>' + resp.msg).fadeIn(1000);
+    }
+}
+
+$(document).ready(function () {
+    $('.main-navigation').onePageNav({scrollThreshold: 0.2, filter: ':not(.external)', changeHash: true});
+});
+$(document).ready(function () {
+    $('.fetaure-details, .buttons').on('click', 'a[href^="#"]', function (event) {
+        event.preventDefault();
+        $('html, body').animate({scrollTop: $($.attr(this, 'href')).offset().top}, 500);
+    });
+    $('#brief1').on('click', 'a[href^="#"]', function (event) {
+        event.preventDefault();
+        $('html, body').animate({scrollTop: $($.attr(this, 'href')).offset().top + 80}, 500);
+    });
+});
+$('.main-navigation>li').click(function () {
+    $(this).parents('.navbar-collapse').removeClass('in');
+});
+if (matchMedia('(max-width: 480px)').matches) {
+    $('.main-navigation a').on('click', function () {
+        $(".navbar-toggle").click();
+    });
+}
+
+function mainNav() {
+    var top = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+    if (top > 40) $('.sticky-navigation').css({'background-color': 'rgba(0, 0, 0, 0.85)'}); else $('.sticky-navigation').css({'background-color': 'rgba(0, 0, 0, 0.19)'});
+}
+
+$(document).ready(function () {
+    mainNav();
+});
+$(window).scroll(function () {
+    mainNav();
+});
+
+
+
+function alturaMaxima() {
+    var altura = $(window).height();
+    $(".full-screen").css('min-height', altura);
+}
+
+$(document).ready(function () {
+    alturaMaxima();
+    $(window).bind('resize', alturaMaxima);
+});
+
+wow = new WOW({mobile: false});
+wow.init();
+$('.expand-form').simpleexpand({'defaultTarget': '.expanded-contact-form'});
+$(window).stellar({horizontalScrolling: false});
+if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+    var msViewportStyle = document.createElement('style');
+    msViewportStyle.appendChild(document.createTextNode('@-ms-viewport{width:auto!important}'));
+    document.querySelector('head').appendChild(msViewportStyle)
+}
+;$(function () {
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 300) {
+            $('#upScroll').fadeIn("slow");
+        } else {
+            $('#upScroll').fadeOut("slow");
+        }
+    });
+    $('#upScroll').click(function () {
+        $('body,html').animate({scrollTop: 0}, 800);
+    });
+});
+$(document).ready(function () {
+    var iframe = document.querySelector('iframe');
+    var player = new Vimeo.Player(iframe);
+    player.setColor('#b5894a').then(function (color) {
+    }).catch(function (error) {
+        switch (error.name) {
+            case'ContrastError':
+                break;
+            case'TypeError':
+                break;
+            case'EmbedSettingsError':
+                break;
+            default:
+                break;
+        }
+    });
+});
+
+
+
 $(document).ready(function () {
     $("#order").submit(function (e) {
         e.preventDefault();

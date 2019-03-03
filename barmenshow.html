@@ -40,26 +40,17 @@
         gtag('config', 'UA-111616192-1');
     </script>
     <script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Organization",
-  "url": "http://exclusivebar.by",
-  "name": "Exclusivebar",
-  "contactPoint":
-    { "@type": "ContactPoint",
-      "telephone": "+375293846785",
-      "contactType": "Customer service"
-    }
-
-}
-
-
-
-
-
-
-
-
+        {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "url": "http://exclusivebar.by",
+            "name": "Exclusivebar",
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+375293846785",
+                "contactType": "Customer service"
+            }
+        }
     </script>
 
     <!-- SITE TITLE -->
@@ -234,18 +225,16 @@
                 </div>
 
                 <p>
-                    Бармен шоу-это по настоящему высший профессионализм барного искусства, который несет зрелищность и
-                    оригинальность.
-                    Перед шоу-барменом стоит задача не просто красиво жонглировать бутылками и демонстрировать различные
-                    элементы флейринга, а окунуть зрителя в динамичное представление, полностью гармонирующее с музыкой
-                    и при этом уделить должное внимание приготовлению смешанных напитков.
-                    От «Exclusive Bar Catering» выступает чемпион Беларуси по флейрингу Геннадий Никанчик.
-                    Техника выступления отрабатывается долгими и упорными тренировками.
+                    Бармен шоу- зрелищное выступление профессионального Артиста! Услуга актуальна на любой формат
+                    Мероприятия, будь то Свадьба или детский праздник.
+                    Заказать выезд можно как в Минске, так и за пределами Беларуси!
                 </p>
-                <span style="font-size: 20px">Просмотреть промо видео можно ниже. Переместиться можно нажав на указатель. </span>
-                <!--<a href="#brief4"> <span style="color: #b5894a; font-size: 110%; font-stretch: normal" >«Смотреть видео» </span></a>-->
-                <!--<a href="#brief4" class="btn btn-default standard-button"> Смотреть видео </a>-->
-                <a href="#brief4" class="b-ff-index-intro__btn-down"></a>
+                <a href="#briefVideo" style="cursor: pointer; display: inline-block">
+                    <span style="font-size: 20px; color: #bd9d6e;">Просмотреть промо видео можно ниже. Переместиться можно нажав на указатель. </span>
+                </a>
+                <!--<a href="#briefVideo"> <span style="color: #b5894a; font-size: 110%; font-stretch: normal" >«Смотреть видео» </span></a>-->
+                <!--<a href="#briefVideo" class="btn btn-default standard-button"> Смотреть видео </a>-->
+                <a href="#briefVideo" class="b-ff-index-intro__btn-down" style="color: #bd9d6e;"></a>
             </div>
             <!-- /ENDBRIEF -->
 
@@ -347,7 +336,7 @@
 <!-- =========================
      BRIEF RIGHT  SECTION  4 VIDEO
 ============================== -->
-<section class="app-brief deep-dark-bg" id="brief4">
+<section class="app-brief deep-dark-bg" id="briefVideo">
 
     <div class="container-fluid">
 
@@ -361,6 +350,21 @@
                         <!--<iframe width="640" height="360" src="https://www.youtube.com/embed/D0Yfs1llkTc?rel=0"
                                 frameborder="0" allowfullscreen></iframe>-->
                         <iframe id="video" src="https://player.vimeo.com/video/243995432" width="640" height="360"
+                                frameborder="0"
+                                webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-xs-12">
+                <div class="video-container">
+
+                    <div class="video">
+
+                        <!--<iframe width="640" height="360" src="https://www.youtube.com/embed/D0Yfs1llkTc?rel=0"
+                                frameborder="0" allowfullscreen></iframe>-->
+                        <iframe id="video2" src="https://player.vimeo.com/video/320771352" width="640" height="360"
                                 frameborder="0"
                                 webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div>
@@ -382,7 +386,7 @@
 <!-- =========================
      SCREENSHOTS
 ============================== -->
-<section class="screenshots " id="screenshot-section">
+<section class="screenshots " id="barScreenshots-section">
 
     <div class="container">
 
@@ -390,12 +394,12 @@
         <div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
 
             <!-- SECTION TITLE -->
-            <h1 class="white-text">Коктейльная Карта</h1>
+            <h1 class="white-text">Фото галерея</h1>
 
             <div class="colored-line">
             </div>
             <div class="section-description">
-                Самые лучшие коктейли со всего мира!
+                Фото с мероприятий
             </div>
             <div class="colored-line">
             </div>
@@ -405,10 +409,45 @@
 
         <div class="row wow bounceIn animated" data-wow-offset="10" data-wow-duration="1.5s">
 
-            <div id="screenshots" class="owl-carousel owl-theme">
+            <div id="barScreenshots" class="swiper-barshow">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow1.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow2.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow3.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow4.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow5.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow6.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow7.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow8.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow9.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow10.jpg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow11.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow12.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow13.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow14.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow15.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow16.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow17.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow18.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow19.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow20.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow21.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow22.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow23.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow24.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow25.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow26.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow27.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                    <div class="swiper-slide swiper-lazy" data-background="images/barShow/barShow28.jpeg"><div class="swiper-lazy-preloader"></div></div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
 
 
             </div>
+
             <!-- /END SCREENSHOTS -->
 
         </div>
@@ -581,10 +620,10 @@
 <!-- WEB FONTS -->
 
 <!-- CAROUSEL AND LIGHTBOX -->
-<link rel="stylesheet" href="css/owl.theme.css">
-<link rel="stylesheet" href="css/owl.carousel.css">
-<link rel="stylesheet" href="css/nivo-lightbox.css">
-<link rel="stylesheet" href="css/nivo_themes/default/default.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+
+<!--<link rel="stylesheet" href="css/nivo-lightbox.css">
+<link rel="stylesheet" href="css/nivo_themes/default/default.css">-->
 
 
 <!-- ANIMATIONS -->
@@ -616,8 +655,10 @@
 <!--<script src="js/smoothscroll.js"></script>-->
 <script src="js/jquery.scrollTo.min.js"></script>
 <script src="js/jquery.localScroll.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/nivo-lightbox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+
+
+<!--<script src="js/nivo-lightbox.min.js"></script>-->
 <script src="js/simple-expand.min.js"></script>
 <script src="js/wow.min.js"></script>
 <script src="js/jquery.stellar.min.js"></script>
@@ -627,7 +668,7 @@
 <script src="js/jquery.ajaxchimp.min.js"></script>
 <script src="js/jquery.fitvids.js"></script>
 <script src="https://player.vimeo.com/api/player.js"></script>
-<script src="js/custom.js"></script>
+<script src="js/barmanshowSlider.js"></script>
 <script src="js/barmanshow.js"></script>
 
 
