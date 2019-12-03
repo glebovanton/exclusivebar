@@ -1,6 +1,7 @@
-var count = 1;
+let count = 1;
+let count2 = 1;
 
-var coctails = [
+let examples = [
     {
         image: 'images/examples/IMG_1741.jpg',
         title: 'Kiwi Chalet',
@@ -52,9 +53,9 @@ var coctails = [
         description: 'Гранатовый вкус переплетён с насыщенностью текилы и сиропа ананас.'
     }
 ].forEach(function (item) {
-        var node = document.createElement('div');
-        var parrent = document.getElementById("examples_list");
-        var getAlt = function (number) {
+        let node = document.createElement('div');
+        let parrent = document.getElementById("examples_list");
+        let getAlt = function (number) {
             let listAlt = ['coctail',
                 'коктейль',
                 '"exclusive bar"',
@@ -85,6 +86,64 @@ var coctails = [
             '                </div>\n';
         parrent.appendChild(node);
         count++;
+    }
+);
+
+let examples2 = [
+    {
+        image: 'images/examples/pyramids/IMG_2407.jpg',
+        title: 'Kiwi Chalet',
+        description: 'Свежесть и полезность киви гармонирует с лимончелой и игристым вином.'
+    },
+    {
+        image: 'images/examples/pyramids/IMG_3959.jpg',
+        title: 'Fresh flower',
+        description: 'Премиум водка/ джин в сочетании со свежестью базилика и цветов бузины, дополненная горечью тоника.'
+    },
+    {
+        image: 'images/examples/pyramids/IMG_6661.jpg',
+        title: 'Basil berry fizz',
+        description: 'Насыщенность малины гармонирует с можжевеловой терпкостью джина и свежестью базилика.'
+    },
+    {
+        image: 'images/examples/pyramids/IMG_6662.jpg',
+        title: 'Bitterly sweet',
+        description: 'Крепость бренди, горечь Кампари и грейпфрута, сладость маракуйи. Дают горечи и сладости сбалансированность.'
+    }
+].forEach(function (item) {
+        let node = document.createElement('div');
+        let parrent = document.getElementById("examples-pyramids_list");
+        let getAlt = function (number) {
+            let listAlt = ['coctail',
+                'коктейль',
+                '"exclusive bar"',
+                'эксклюзивбар',
+                '"эксклюзив бар"',
+                'exclusivebar',
+                'коктейли',
+                '"бар"',
+                '"bar"',
+                '"кейтеринг"',
+                '"catering"',
+                '"бармен"',
+                '"бармен шоу"',
+                '"barman show"',
+                '"barmanshow"',
+            ];
+            let index = number % listAlt.length;
+            return listAlt[index];
+
+        };
+
+        node.className = 'col-xs-12 col-sm-6  col-md-4 ';
+        node.innerHTML = '<div class="coct">\n' +
+            '                    <img src=' + item.image + ' alt=' + getAlt(count2) + '>\n' +
+            '                    <!-- 1 -->\n' +
+            '                    </div>\n' +
+            '                    <div class="coct_desc">\n' +
+            '                </div>\n';
+        parrent.appendChild(node);
+    count2++;
     }
 );
 

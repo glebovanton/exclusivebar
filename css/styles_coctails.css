@@ -55,9 +55,13 @@ body {
 .coct {
     display: inline-block;
     position: relative;
-    margin-bottom: 45%;
+    margin-bottom: 20%;
     /**/
 }
+@media (max-width:767px){
+    .coct {
+    margin-bottom: 5%;
+}}
 
 .coct img {
     width: 100%;
