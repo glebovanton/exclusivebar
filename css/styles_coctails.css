@@ -47,6 +47,11 @@ body {
     padding-top: 500px;
 }
 
+#examples_list{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .coct {
     display: inline-block;
     position: relative;
